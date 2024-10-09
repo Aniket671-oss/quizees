@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main(void){
+    int high_temp[14];
+    int warmdays = 0, colddays = 0, i = 0;
+    float average = 0.0f, sum = 0.0f;
+
+
+    printf("\nWeather Analyzer Application by Joey Peters");
+    for(i = 0; i < 14; i++) {
+        printf("\n\nPlease enter the temperature for day #%d ", i+1);
+        scanf("%d", &high_temp[i]);
+
+        sum += high_temp[i];
+
+        if(high_temp[i] > 60){
+            warmdays++;
+        }
+
+        if(high_temp[i] < 60){
+            colddays++;
+        }
+
+
+    }
+
+        average = sum / 14;
+        printf("\nThe number of warm days: %d", warmdays);
+        printf("\nThe nuber of cold days: %d", colddays);
+        printf("\nThe average high temperature: %.2f", average);
+
+        if(average = 100 || average >= 90 ){
+            printf("These two weeks were blazing hot");
+        }
+    else    
+        if(average >= 80 || average <= 89){
+            printf("\nThese two weeks were quite hot");
+        }
+    else    
+
+        if(average >= 70 || average <= 79){
+            printf("\nThese two weeks hot for Michigan");
+        }
+    else    
+
+        if(average >= 60 || average <= 69){
+            printf("\nThese two weeks were decent for Michigan");
+        }
+    else    
+        if(average >= 50 || average <= 59){
+            printf("\nThese two weeks were somewhat cold");
+        }
+    else
+        if(average < 50){
+            printf("\nThese two weeks were basically cold");
+        }   
+
+    printf("\n\nThank you for using the weather analyzer!");
+    return 0;
+
+}
